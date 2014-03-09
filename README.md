@@ -1,4 +1,4 @@
-# yags - Yet Another Grid System (v.1.0)
+# yags - Yet Another Grid System (v.1.1)
 
 It's a 12-columns ~ Margin left: 10px ~ Margin right: 10px; 4 breakpoints grid system.
 
