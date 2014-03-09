@@ -11,6 +11,11 @@ Created by Pawel Jonik - http://twitter.com/paweljonik/
 Free to use under MIT License - http://opensource.org/licenses/MIT/
 
 v.1.0 (7/03/2014)
+- initial release;
+v.1.1 (7/03/2014)
+- example styling clean-up;
+- added support for IE8 (via respond.js & html5shiv.js);
+- tested on IE8;
 
 
 /* Table of Contents
