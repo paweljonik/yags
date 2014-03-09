@@ -27,7 +27,7 @@ instead of
 	.c1~12
 the columns will be forced on all resolutions.
 
-## Example for html5 sectioning markup: 
+## Example for html5 sectioning markup ([demo](http://paweljonik.net/.github/yags/index.html)): 
 
 	<section>
 		<article>
@@ -40,7 +40,7 @@ the columns will be forced on all resolutions.
 		</article>
 	</section>
 	
-## Example for html4 div markup: 
+## Example for html4 div markup ([demo](http://paweljonik.net/.github/yags/index2.html)): 
 
 	<div class="section">
 		<div class="article">
