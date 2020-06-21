@@ -1,4 +1,4 @@
-# yags - Yet Another Grid System (v.1.1)
+# yags - Yet Another Grid System (v.2.0)
 
 Previously based on a 12-column grid system.
 Currently - any-column - grid system based on flex properties.
