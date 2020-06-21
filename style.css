@@ -1,165 +1,138 @@
 /*
 yags - Yet Another Grid System.
-12.cols ~ Margin left: 10px ~ Margin right: 10px; 4 breakpoints;
 
-Based on the 1kb.crid system - http://www.1k.crid.com/
-by Tyler Tate. Iteration by Pawel Jonik: http://twitter.com/paweljonik/;
-& * Skeleton V1.2 - http://www.getskeleton.com/
-by Dave Gamache
+Previously based on a 12-column grid system.
+Currently - any-column - grid system based on flex properties.
+
+Some bare minimum to start from on your simple projects.
 
 Created by Pawel Jonik - http://twitter.com/paweljonik/
 Free to use under MIT License - http://opensource.org/licenses/MIT/
 
-v.1.0 (7/03/2014)
-- initial release;
+v.2.0 (15/06/2020)
+- switched to flexbox
+- code clean-ups
+- todo: flip class convenction for forced/default behavior
 v.1.1 (7/03/2014)
 - example styling clean-up;
 - added support for IE8 (via respond.js & html5shiv.js);
 - tested on IE8;
-
+v.1.0 (7/03/2014)
+- initial release;
 
 /* Table of Contents
 ==================================================
-    #Base 960 Grid
     #Tablet (Portrait) (768px on 768px devices)
     #Mobile (Portrait) (300px on 320px devices)
     #Mobile (Landscape) (420px on 480px devices)
     #Clearing 
 */
 
+/* # Resets
+==================================================*/
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+	margin: 0;
+	text-align: center;
+  }
+body {
+	text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 
-/* #Base 960 Grid
-================================================== */
-section, .section, .container { width: 100%; position: relative; margin: 0 auto; padding: 0; }
-article .col, .article .col, .container .col { float: left; display: inline; margin-left: 10px; margin-right: 10px;}
-/* Nested Column Classes */
-.col.alpha { margin-left: 0; }
-.col.omega { margin-right: 0; }
-
-.col {	margin: 0 10px 0 10px;
-		overflow: hidden;
-		float: left;
-		display: inline;}
-.row, article, .article {	width: 960px;
-		margin: 0 auto;
-		overflow: hidden;}
-.row .row, article article, .article .article {width: auto
-	;	margin: 0 -10px 0 -10px;
-		display: inline-block;}
-
-/*.cols & offsets*/
-.c1 {width: 60px;} .on1 {padding-left: 80px;}
-.c2 {width: 140px;} .on2 {padding-left: 160px;}
-.c3 {width: 220px;} .on3 {padding-left: 240px;} /*1/4*/
-.c4 {width: 300px;} .on4 {padding-left: 320px;} /*1/3*/
-.c5 {width: 380px;} .on5 {padding-left: 400px;}
-.c6 {width: 460px;} .on6 {padding-left: 480px;} /*1/2*/
-.c7 {width: 540px;} .on7 {padding-left: 560px;}
-.c8 {width: 620px;} .on8 {padding-left: 640px;} /*2/3*/
-.c9 {width: 700px;} .on9 {padding-left: 720px;} /*3/4*/
-.c10 {width: 780px;} .on10 {padding-left: 800px;}
-.c11 {width: 860px;} .on11 {padding-left: 880px;}
-.c12 {width: 940px;}
-
-.half {width: 460px;} .o-half {padding-left: 460px;}
-.one-third {width:300px;} .o-one-third {padding-left: 300px;}
-.two-thirds {width:620px;}
-.one-fourth {width:220px;} .o-one-fourth {padding-left: 220px;}
-.three-fourths {width:700px;} .o.three-fourths {padding-left:700px;}
-
-
-/* #Tablet (Portrait): Design for a width of 768px
-================================================== */
-
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-	article, .article, .container { width: 720px; }
-	article .col, .article .col, .container .col, header .col, .header .col, footer .col, .footer .col { margin-left: 10px; margin-right: 10px;  }
-	.col.alpha { margin-left: 0; margin-right: 10px; }
-	.col.omega { margin-right: 0; margin-left: 10px; }
-	.alpha.omega { margin-left: 0; margin-right: 0; }
-
-.c1 {width: 40px;} .on1 {padding-left: 60px;}
-.c2 {width: 100px;} .on2 {padding-left: 120px;}
-.c3 {width: 160px;} .on3 {padding-left: 180px;} /*1/4*/
-.c4 {width: 220px;} .on4 {padding-left: 240px;} /*1/3*/
-.c5 {width: 280px;} .on5 {padding-left: 300px;}
-.c6 {width: 340px;} .on6 {padding-left: 360px;} /*1/2*/
-.c7 {width: 400px;} .on7 {padding-left: 420px;}
-.c8 {width: 460px;} .on8 {padding-left: 480px;} /*2/3*/
-.c9 {width: 520px;} .on9 {padding-left: 540px;} /*3/4*/
-.c10 {width: 580px;} .on10 {padding-left: 600px;}
-.c11 {width: 640px;} .on11 {padding-left: 660px;}
-.c12 {width: 700px;}
-/* those will be forced on all resolutions */
-.half {width: 340px;} .o-half {padding-left: 340px;}
-.one-third {width:220px;} .o-one-third {padding-left: 220px;}
-.two-thirds {width:460px;}
-.one-fourth {width:160px;} .o-one-fourth {padding-left: 160px;}
-.three-fourths {width:520px;} .o.three-fourths {padding-left:520px;}
 }
 
-
-/*  #Mobile (Portrait): Design for a width of 320px
-================================================== */
-
-@media only screen and (max-width: 767px) {
-	article, .article, .container { width: 300px; }
-	article .col, .article .col, .container .col, header .col, .header .col, footer .col, .footer .col { margin: 0; }
-	.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 { width: 300px; }
-	.on1, .on2, .on3, .on4, .on5, .on6, .on7, .on8, .on9, .on10, .on11, 
-	.o-one-third {padding-left: 0px;}
-
-.half {width: 150px;} .o-half {padding-left: 150px;}
-.one-third {width:100px;} .o-one-third {padding-left: 100px;}
-.two-thirds {width:200px;}
-.one-fourth {width:75px;} .o-one-fourth {padding-left: 75px;}
-.three-fourths {width:225px;} .o.three-fourths {padding-left:225px;}
+/**/
+._flex {
+	display: flex; 
+	flex-direction: row; 
+	justify-content:center;
+}
+._flex > * {
+	flex: 1; 
+	flex-grow: 1;}
+header > *,
+section > *,
+footer > * {
+	width: 85%; 
+	margin: 0 auto;
 }
 
-
-/* #Mobile (Landscape): Design for a width of 480px
-================================================== */
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-	article, .article, .container { width: 420px; }
-	article .col, .article .col, .container .col, header .col, .header .col, footer .col, .footer .col { margin: 0; }
-	.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 { width: 420px; }
-
-.half {width: 210px;} .o-half {padding-left: 210px;}
-.one-third {width:140px;} .o-one-third {padding-left: 140px;}
-.two-thirds {width:280px;}
-.one-fourth {width:105px;} .o-one-fourth {padding-left: 105px;}
-.three-fourths {width:315px;} .o.three-fourths {padding-left:315px;}
+._1of2, ._half {
+	flex: 0 1 50%;
+}
+._1of3, ._one-third {
+	flex: 0 1 33.334%;
+}
+._2of3, 
+._two-thirds {
+	flex: 0 1 66.667%;
+}
+._1of4, 
+._quarter, 
+._one-fourth {
+	flex: 0 1 25%;
+}
+._3of4, 
+._three-quarters, 
+._three-fourths {
+	flex: 0 1 75%
+}
+._wide {
+	flex: 0 1 100%;
 }
 
+._toleft {
+	text-align: left; 
+	justify-content: left;
+}
+._toright {
+	text-align: right; 
+	justify-content: right;
+}
 
-/* #Clearing
-================================================== */
-
-article:after, .article:after, .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
-
-/* Use clearfix class on parent to clear nested.cols,
-or wrap each row of.cols in a <div class="row"> */
-.clearfix:before,
-.clearfix:after,
-.row:before,
-.row:after {
-	content: '\0020';
+ul._horizontal {
+	display: flex; 
+	justify-content: center; 
+	flex: 0 1 auto; 
+	padding: 0;
+}
+ul._horizontal li {
 	display: block;
-	overflow: hidden;
-	visibility: hidden;
-	width: 0;
-	height: 0;
+	list-style-type: none;
 }
-.row:after, .clearfix:after {clear: both; }
-.row, .clearfix {zoom: 1; }
 
-/* You can also use a <br class="clear" /> to clear.cols */
-.clear {
-	clear: both;
-	display: block;
-	overflow: hidden;
-	visibility: hidden;
-	width: 0;
-	height: 0;
+@media (max-width: 45em){
+	._flex {
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+	}
+	._1of2,
+	._1of3,
+	._2of3,
+	._1of4,
+	._3of4,
+	._half, 
+	._one-third, 
+	._two-thirds, 
+	._one-fourth, 
+	._three-fourths,
+	._quarter, 
+	._three-quarters
+	._toleft, 
+	._toright,
+	div {
+		flex: 1 1 86%;
+		text-align: center;
+		/* flex-flow: row; */
+	}
 }

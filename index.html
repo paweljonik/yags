@@ -10,275 +10,198 @@
 
 	<link rel="stylesheet" href="style.css" />
 
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
-
 <!-- remove this style - it's just for demo -->
-<style type="text/css" media="all">
-body {color: #567;font-family: sans-serif;font-size: 11px;text-align: center;}
-section,article,header,footer {display: block;}
-.col {background: #dee;	overflow: hidden;margin: 0 0 10px 0;text-align: center;}
-.c1 p {border-left: 1px solid #eff;}
-header, .header, footer, .footer {background:#eee;}
-section.odd, .section.odd {background: #fff;}
-section, .section {background: #eee;}
-article, .article {background: #eff;}
+<style>
+  *, *:before, *:after {	margin: .5em .25em;}
+body {
+  color: #bbb;
+  font-family: Arial;
+  font-size: 1em;
+}
+section,article,header,footer,div {
+  box-shadow: 0 0 1px inset rgba(255,0,255,.75); 
+  border: 1px solid rgba(255,0,255,.25)
+}
+div {
+  box-shadow: 0 0 1px inset rgba(128,128,128,.75); 
+  border:1px solid rgba(128,128,128,.25)
+  }
 </style>
-<!-- remove this style - it's just for demo -->
+<!-- /remove this style - it's just for demo -->
 </head>
 <body>
 
 
 <header>
-  <article>
-    <div class="col c4">
-      <h1>HOME</h1>
-    </div>
-    <div class="col c8">
-      <nav>
-        <ul>
-          <li>Your menu</li>
-          <li>Your menu</li>
-          <li>Your menu</li>
-        </ul>
-      </nav>
-    </div>
-  </article>
+  <nav class="_flex">
+    <h1 class="_toleft">YAGS - Yet Another Grid System</h1>
+    <ul class="_horizontal _toright">
+      <li><a href="#">Link1</a></li>
+      <li><a href="#">Link2</a></li>
+      <li><a href="#">Link3</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section>
   <article>
-    <div class="col c12">
-      <h1>yags - Yet Another Grid System</h1>
-      <h2>12 column ~ 4 breakpoints</h2>
-      <p>by <a href="http://twitter.com/paweljonik" title="Find me on Twitter">Pawel Jonik</a></p>
-    </div>
+    <h1>yags - Yet Another Grid System</h1>
+    <p>by <a href="http://twitter.com/paweljonik" title="Find me on Twitter">Pawel Jonik</a></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel arcu et mauris maximus tincidunt. Donec ut placerat tellus. Etiam et mauris ac lectus dignissim. </p>
   </article>
 </section>
 
 <section>
   <article>
+    <h2>One-third</h2>
+    <div class="_flex">
+      <div class="_one-third">
+        <p>1/3</p>
+      </div>
+      <div class="_one-third">
+        <p>1/3 abc</p>
+      </div>
+      <div class="_one-third">
+        <p>1/3 defghi</p>
+      </div>
+    </div>
+  </article>
+  <article>
     <h2>One-third forced always</h2>
-    <div class="col one-third">
-      <p>1/3</p>
-    </div>
-    <div class="col one-third">
-      <p>1/3</p>
-    </div>
-    <div class="col one-third">
-      <p>1/3</p>
-    </div>
-  </article>
-  <article>
-    <h2>One-third forced always</h2>
-    <div class="col one-third">
-      <p>1/3</p>
-    </div>
-    <div class="col one-third">
-      <p>1/3</p>
-    </div>
-    <div class="col one-third">
-      <p>1/3</p>
+    <div class="_flex">
+      <div>
+        <p>1/3</p>
+      </div>
+      <div>
+        <p>1/3 abc</p>
+      </div>
+      <div>
+        <p>1/3 defghi</p>
+      </div>
     </div>
   </article>
   <article>
-  <h2>One-fourth forced always</h2>
-    <div class="col one-fourth">
+    <h2>One-third</h2>
+    <div class="_flex">
+      <div class="_1of3">
+        <p>1/3</p>
+      </div>
+      <div class="_1of3">
+        <p>1/3 abc</p>
+      </div>
+      <div class="_1of3">
+        <p>1/3 defghi</p>
+      </div>
+    </div>
+  </article>
+  <article>
+    <h2>One-fifth forced but...</h2>
+    <div class="_flex">
+      <div class="_1of2">
+        <p>1/5 at half</p>
+      </div>
+      <div>
+        <p>1/5 abcdef</p>
+      </div>
+      <div>
+        <p>1/5 defghijkl</p>
+      </div>
+      <div>
+        <p>1/5 mno</p>
+      </div>
+      <div>
+        <p>1/5 abc</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="_flex">
+  <div>
+    <p>1/2</p>
+    <h2>This is half forced.</h2>
+    <img src="https://via.placeholder.com/512/f0f0f0?text=IMAGE" class="_toright" />
+  </div>
+  <div>
+    <p>1/2</p>
+    <h2>This is half forced.</h2>
+  </div>
+</section>
+
+<section class="_flex">
+  <div class="_half">
+    <p>1/2</p>
+    <h2>This is half not so.</h2>
+  </div>
+  <div class="_half">
+    <p>1/2</p>
+    <h2>This is half not so.</h2>
+  </div>
+</section>
+
+<section>
+  <article class="_flex">
+    <div class="_one-fourth">
       <p>1/4</p>
     </div>
-    <div class="col half">
+    <div class="_half">
       <p>1/2</p>
     </div>
-    <div class="col one-fourth">
+    <div class="_one-fourth">
       <p>1/4</p>
     </div>
   </article>
-  <article>
-    <div class="col half">
+  <article class="_flex">
+    <div class="_half">
       <p>1/2</p>
     </div>
-    <div class="col half">
+    <div class="_half">
       <p>1/2</p>
     </div>
   </article>
-  <article>
-    <div class="col one-fourth">
+  <article class="_flex">
+    <div class="_one-fourth">
       <p>1/4</p>
     </div>
-    <div class="col three-fourths">
+    <div class="three-fourths">
       <p>3/4</p>
     </div>
   </article>
 </section>
 
+
 <section>
   <article>
-    <div class="col c1">
-      <p>60px</p>
-    </div>
-    <div class="col c11">
-      <p>860px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c2">
-      <p>140px</p>
-    </div>
-    <div class="col c10">
-      <p>780px</p>
+    <h2>One-third</h2>
+    <div class="_flex">
+      <div class="_one-third">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      </div>
+      <div class="_one-third">
+        <p>Ut quis fringilla leo, vitae finibus orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="_one-third">
+        <p>Sed sed nunc porttitor, tincidunt ex semper, rutrum dui. </p>
+      </div>
     </div>
   </article>
-  <article>
-    <div class="col c3">
-      <p>220px</p>
+  <article class="_flex">
+    <div class="_toright">
+      <img src="https://via.placeholder.com/320/f0f0f0?text=IMAGE" class="_toright" />
     </div>
-    <div class="col c9">
-      <p>700px</p>
-    </div>
-  </article>
-
-  <article>
-    <div class="col c4">
-      <p>300px</p>
-    </div>
-    <div class="col c8">
-      <p>620px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c5">
-      <p>380px</p>
-    </div>
-    <div class="col c7">
-      <p>540px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c6">
-      <p>460px</p>
-    </div>
-    <div class="col c6">
-      <p>460px</p>
+    <div>
+      <p>Cras id sapien elementum, egestas risus sed, vulputate odio. Quisque maximus sodales erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut quis justo at lacus hendrerit tristique vitae vel urna.</p>
     </div>
   </article>
 </section>
 
 
-<section>
+<footer>
   <article>
-    <div class="col c7">
-      <p>540px</p>
-    </div>
-    <div class="col c5">
-      <p>380px</p>
-    </div>
+    <div class="c12"></div>
+      <p>&copy; 2014-2020 by <a href="http://paweljonik.net">Pawel Jonik</a>. Blablabla use it as you wish ;-).</p>
   </article>
-  <article>
-    <div class="col c8">
-      <p>620px</p>
-    </div>
-    <div class="col c4">
-      <p>300px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c9">
-      <p>700px</p>
-    </div>
-    <div class="col c3">
-      <p>220px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c10">
-      <p>780px</p>
-    </div>
-    <div class="col c2">
-      <p>140px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c11">
-      <p>860px</p>
-    </div>
-    <div class="col c1">
-      <p>60px</p>
-    </div>
-  </article>
-</section>
-
-<section>
-  <article>
-    <div class="col c1">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on1">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on2">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on3">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on4">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on5">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on6">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on7">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on8">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on9">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on10">
-      <p>60px</p>
-    </div>
-  </article>
-  <article>
-    <div class="col c1 on11">
-      <p>60px</p>
-    </div>
-  </article>
-</section>
-
-
-  <footer>
-    <article>
-      <div class="col c12">
-        <p>&copy; 2014 by <a href="http://paweljonik.net">Pawel Jonik</a>. Blablabla use it as you wish ;-).</p>
-    </article>
-  </footer>
+</footer>
 
 
 </body></html>
